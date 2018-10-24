@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DataFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.css">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <link rel="stylesheet" href="../static/style.css">
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <style type="text/css">
+        .bg-cover {
+              background-image: url('../static/ML.jpg');
+              background-repeat: repeat-x;
+        }
+      </style>
+        
+  </head>
+  <body>
+
+<!--div class="container w-100"-->
+  <div class="jumbotron jumbotron bg-cover" >
+    <div class="overlay">
+    </div>
+  </div>
+ 
+  <div>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" href="">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">Vizualizations</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">About</a>
+        </li>
+    </ul>  
+  </div>
+
+  <div class="jumbotron">
+    <h3 class="display-3">DataFit</h3>
+    <p class="lead">
+      <b>
+          Fitting your data into favourable machine learning models
+      </b>
+      <p>
+          Data fit: The user can select the dataset of choice and perform supervised or unsupervised learning on the given data set.
+      </p>
+    </p>
+  </div>
+
+<div class = "container" >
+  <div class = "col-md-6">
+    <div class="form-group">
+      <form method=post action='/upload' enctype=multipart/form-data>
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name ="file" id="btnfile">
+            <label class="custom-file-label" for="file">Choose file</label>
+          </div>
+
+          <div class="input-group-append">
+            <button class="btn btn-info"" type="submit" value=Upload>Upload</button>
+          </div>
+        </div>
+      </form> 
+    </div>
+  
+
+    <form>
+      <fieldset>
+        <div class="form-group">
+          <label for="exampleSelect2">Select Features (Dependent)</label>
+         <!-- <select multiple="" class="form-control" id="columnheader_y">-->
+          <select class="form-control" id="columnheader_y" multiple>
+            {% if result %}
+               {% for item in result %}
+                <option value="empty">{{item}}</option>
+              {% endfor %}
+            {% else %}
+              <option value="empty">Wait</option>
+            {% endif %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect2">Select Features (Independent)</label>
+          <select class="form-control" id="columnheader_x">
+            {% if result %}
+               {% for item in result %}
+                <option value="empty">{{item}}</option>
+              {% endfor %}
+            {% else %}
+              <option value="empty">Wait</option>
+            {% endif %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Select the Machine Learning Algorithm</label>
+          <select class="form-control" id="Algorithm">
+            <option>KNN</option>
+            <option>Decision Tree</option>
+            <option>Algorithm 3</option>
+            
+          </select>
+        </div>
+
+      </fieldset>
+    </form>
+    <button  class="btn btn-primary" id="submit">Submit</button>
+  </div> 
+  <hr>
+  <div class="container" id='data-from-server' style="background-color: white;border:2 2 2 2;color:black">
+
+  </div>
+  <hr>
+<footer>
+  <p class="text-muted ">The information
+presented here was created for educational purposes
+only.
+  </p>
+</footer>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

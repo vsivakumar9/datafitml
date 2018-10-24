@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DataFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <style type="text/css">
+      .bg-cover {
+          background-image: url('../static/ML.jpg');
+      }
+  </style>
+  </head>
+<body>
+  <div class="jumbotron jumbotron bg-cover text-center" >
+    <div class="overlay"></div>
+    <div class="container"></div>
+  </div>
+  <div>
+      <ul class="nav nav-pills">
+             <li class="nav-item">
+            <a class="nav-link active" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('analysis')}}">Analysis</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About</a>
+          </li>
+        </ul>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-3">DataDash Project</h1>
+        <p class="lead">The Datadash team scraped job description data from Glassdoor.com. We stored and cleaned data in SQLite.  <br /> <br />We analyzed text for key words using natural language processing and used raw data to evaluate the requirements for 3 specific job titles. Website was built in Bootstrap 4, utilizing JQuery and AJAX for navigation controls. Visualizations were built in Plotly and Carto.
+          <br / > <br />
+        Next on our roadmap is to integrate the resume analysis tool - job seeker pastes the test of their resume on the website, and get a recommended job description.</p>
+    <div>
+    <div class="row" style="padding-top: 30px">
+        <div class="col-md-4">
+                <div class="card mb-3">
+                        <h3 class="card-header">Jill Stratton</h3>
+                        <div class="card-body">
+                          <h5 class="card-title">Project Manager</h5>
+                          <h6 class="card-subtitle text-muted">                          <h6 class="card-subtitle text-muted">Project Vision/Full Stack Assistance/Implementation of Goals </h6></h6>
+                        </div>
+                        <img class = "img-thumbnail" style="height: 100%; width: 100%; display: block;" src="../static/JStratton.jpg" width="75" height="200" alt="" title="" />
+                        <div class="card-body">
+                          <p class="card-text">"What I love about data is the stories it can tell." </p>
+						  <p> BA in English and Communications, I have been working with student data for the past 6 years.  Ignited by a map visualization project, my love for data lead me to a DataScience and Visualization BootCamp at Rutgers. I have a love for most things nerdy and can be found hanging out with my family.
+                        </div>
+                        <div class="card-body">
+                          <a href="https://github.com/jmstratton" class="card-link">GitHub Portfolio link</a>
+                          <a href="https://www.linkedin.com/in/strattonjill/" class="card-link">LinkedIn link</a>
+                        </div>
+
+                </div>
+        </div>
+        <div class="col-md-4">
+                <div class="card mb-3">
+                        <h3 class="card-header">Priya Venkataraman</h3>
+                        <div class="card-body">
+                          <h5 class="card-title">Full Stack Developer</h5>
+                          <h6 class="card-subtitle text-muted">Developed and implemented concepts at multiple project levels</h6>
+                        </div>
+                        <img class = "img-thumbnail" style="height: 100%; width: 100%; display: block;" src="../static/PVenkataraman.jpg" width="569" height="569" alt="" title="" />
+                        <div class="card-body">
+                          <p class="card-text">Technology enthusiast, resourceful certified scrum master with 8+ years of business analysis, project management, risk assessment experience in diverse global IT Domains( Healthcare, Banking and Manufacturing). Evangelist of agile-scrum principles and methodology. Expert at driving the adoption and enforcement of Scrum rules, removing impediments, fostering self-management, to ensure business and project objectives are met. Proficient in Business Requirement Analysis, Business Process Improvement, Requirements gathering with documentation and Content Management in gathering data, analyzing and problem solving in a variety of environments. Facilitated sprint planning, daily scrums, retrospectives, stakeholder meetings, and software demonstrations (Agile ceremonies).</p>
+                        </div>
+                        <div class="card-body">
+                          <a href="https://github.com/pvenk14" class="card-link">GitHub Portfolio link</a>
+                          <a href="https://www.linkedin.com/in/priyadarshini-venkataraman-csm%C2%AE-b5304111/" class="card-link">LinkedIn link</a>
+                        </div>
+
+                </div>
+        </div>
+        <div class="col-md-4">
+                <div class="card mb-3">
+                        <h3 class="card-header">Jonathan Groth</h3>
+                        <div class="card-body">
+                          <h5 class="card-title">Back End Developer</h5>
+                          <h6 class="card-subtitle text-muted">Data Architect/Back End Development/Responsible for Natural Language Processing</h6>
+                        </div>
+                        <img class = "img-thumbnail" style="height: 100%; width: 100%; display: block;" src="../static/JGroth.jpg" width="450" height="450" alt="" title="" />
+                        <div class="card-body">
+                          <p class="card-text">I am a data scientist, with a scientist's rigor and curiosity, an engineer's problem solving and solution-oriented mind set, and educator's desire to impart a story. My training as both a scientist and as an engineer have given me unique insights into the process of understanding a problem and developing a solution. </p>
+						  <p>My expertise is in data analysis particularly in time series analysis, but I have expanded experience in an array of analysis techniques and domains. I am an experienced educator, in professional and academic settings, that has developed superb communication skills with the ability to explain complex ideas in an easy to understand way.</p>
+
+                        </div>
+                        <div class="card-body">
+                          <a href="https://github.com/jgroth1" class="card-link">GitHub Portfolio link</a>
+                          <a href="https://www.linkedin.com/in/jonathan-groth-phd/" class="card-link">LinkedIn link</a>
+                        </div>
+
+                </div>
+        </div>
+        <div class="col-md-4">
+                <div class="card mb-3">
+                        <h3 class="card-header">Meghana Raje</h3>
+                        <div class="card-body">
+                          <h5 class="card-title">Back End Developer/Visualizations</h5>
+                          <h6 class="card-subtitle text-muted">Contributed to various Back End processes and created visualizations.</h6>
+                        </div>
+                        <img class = "img-thumbnail" style="height: 100%; width: 100%; display: block;" src="../static/MRaje.jpg" width="3024" height="3446" alt="" title="" />
+                        <div class="card-body">
+                          <p class="card-text">Spanning a decade in Pharma industry, I come with diverse experience
+                          in Pharma Business and IT processes. I enable alignment of functional processes, data, integrations and reporting
+                          with a Quality perspective.</p>
+                          
+                          <p>Efficiency and learning new skills is what I enjoy pursuing! When I lead my approach is 
+                          to enable my growth and ensure everyone 
+                          around me grows with me and that why I am a team player. I am focused on meeting deadlines, thereby, optimizing time and resources.</p>
+
+						  On any given day, I am competing with my 13 year old daughter (she is a Girlsmakeapps.org member) to get better in Python!</p>
+                        </div>
+                        <div class="card-body">
+                          <a href="https://github.com/Meghanavmr" class="card-link">GitHub Portfolio link</a>
+                        </div>
+
+                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                    <h3 class="card-header">Ira Petric-Buchberger</h3>
+                    <div class="card-body">
+                      <h5 class="card-title">Front End Developer</h5>
+                      <h6 class="card-subtitle text-muted">Responsible for developing client-facing websites.</h6>
+                    </div>
+                    <img class = "img-thumbnail" style="height: 100%; width: 100%; display: block;" src="../static/IPetric-Buchberger.jpg" width="337" height="337" alt="" title="" />
+                    <div class="card-body">
+                      <p class="card-text">My purpose is making order out of chaos, with a mantra 'How can I make this more efficient?'. Whether it was reducing laboratory testing time, streamlining database architecture, or optimizing morning routine for special needs preschoolers, I relied on collecting, measuring and analyzing data. </p>
+                      <p>  I thrive when I'm learning something new, and that pursuit of new knowledge led me to this Data Science bootcamp. When I am not designing websites for class project, I enjoy spending time with my family, reading and contemplating on the meaning of life.</p>
+                    </div>
+                    <div class="card-body">
+                      <a href="https://github.com/ipetricb" class="card-link">GitHub Portfolio link</a>
+                      <a href="https://www.linkedin.com/in/irapetricbuchberger/" class="card-link">LinkedIn link</a>
+                    </div>
+
+            </div>
+    </div>
+    </div>
+    <div>
+      <footer class="footer" style="padding-top: 30px">
+        <span class="bottom">The information presented here was created for educational purposes only.</span>
+      </footer>
+    </div>
+  </body>
+  
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DataFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <!-- <link rel="stylesheet" href="../static/style.css"> -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <style type="text/css">
+        .bg-cover {
+              background-image: url('../static/ML.jpg');
+              background-repeat: repeat-x;
+              margin-bottom: 0px;
+
+        }
+
+        /* Header/Logo Title */
+        .header {
+          /* padding: 10px; */
+          text-align: center;
+          background: lightcyan;
+          color: grey;
+          font-size: 30px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-right: 20px;
+          margin-left: 20px;        }
+
+          .submit{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width:100px;
+            height:40px;
+            background-color:#111111;
+            border:2px solid #FFFFFF;
+            border-radius:10px;
+            color:#FFFFFF;
+            font-size:17px;
+            cursor:pointer !important;
+            outline:none;
+          }
+
+          .submit:hover{
+            background-color:#222222;
+          }
+
+          .ajax-button{
+            position:relative;
+            display:inline-block;
+            width:100px;
+            height:40px;
+            left:50%;
+            top:50%;
+            margin-left:-50px;
+            margin-top:-20px;
+            text-align:center;
+          }
+           
+      </style>
+        
+  </head>
+  <body>
+
+<!--div class="container w-100"-->
+  <div class="jumbotron jumbotron bg-cover" >
+    <div class="overlay">
+    </div>
+  </div>
+  <!-- <div class="row content"> -->
+      <div class="navbar navbar-light">
+          <ul class="nav nav-pills ">
+              <li class="nav-item">
+                <a class="nav-link active" href="{{url_for('index')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('visualization')}}">Visualization</a>
+                </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('projectlc')}}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}">The Team</a>
+                </li>
+          </ul>  
+        </div>
+
+        
+
+  <!-- </div> -->
+ 
+  <div class="header">
+    <h1>DataFit</h1>
+    <p>
+      <b>
+          <marquee>Fitting your data into favourable machine learning models</marquee>
+      </b>
+      <!-- <p>
+          Data fit: The user can select the dataset of choice and perform supervised or unsupervised learning on the given data set.
+      </p> -->
+    </p>  
+  </div>
+
+  <!-- <div class="jumbotron">
+    <h3 class="display-3">DataFit</h3>
+    <p class="lead">
+      <b>
+          <marquee>Fitting your data into favourable machine learning models</marquee>
+      </b>
+      <p>
+          Data fit: The user can select the dataset of choice and perform supervised or unsupervised learning on the given data set.
+      </p>
+    </p>
+  </div> -->
+
+<div class = "container-fluid" >
+
+    <div class="row content">
+
+      <div class = "col-md-6">
+        <div class="form-group">
+          <form method=post action='/upload' enctype=multipart/form-data>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name ="file" id="btnfile">
+                <label class="custom-file-label" for="file">Choose file</label>
+              </div>
+
+              <div class="input-group-append">
+                <button class="btn btn-info" type="submit" value=Upload>Upload</button>
+              </div>
+            </div>
+          </form> 
+        </div>
+        
+      
+        <form>
+          <fieldset>
+            <div class="form-group">
+              <label for="exampleSelect2"><strong>Select Features (Dependent)</strong></label>
+            <!-- <select multiple="" class="form-control" id="columnheader_y">-->
+              <select class="form-control" id="columnheader_y" multiple>
+                {% if result %}
+                  {% for item in result %}
+                    <option value="empty">{{item}}</option>
+                  {% endfor %}
+                {% else %}
+                  <option value="empty">Wait</option>
+                {% endif %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect2"><strong>Select Features (Independent)</strong></label>
+              <select class="form-control" id="columnheader_x">
+                {% if result %}
+                  {% for item in result %}
+                    <option value="empty">{{item}}</option>
+                  {% endfor %}
+                {% else %}
+                  <option value="empty">Wait</option>
+                {% endif %}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect1"><strong>Select the Machine Learning Algorithm</strong></label>
+              <select class="form-control" id="Algorithm">
+                <option>KNN</option>
+                <option>Decision Tree</option>
+                
+                
+              </select>
+            </div>
+          </fieldset>
+        </form>
+          <div class="ajax-button">
+              <!-- <div class="fa fa-check done"></div>
+              <div class="fa fa-close failed"></div> -->
+              <!-- <input id="submit" class="submit" type="button" value="Submit" /> -->
+              <button  class="btn btn-primary" id="submit">Submit</button>
+          </div>
+      </div> 
+
+      <div class="col-md-6 sidenav">
+
+          <table id="data-from-server" class="table table-hover">
+              <thead>
+                  <tr id="sample-metadata">
+                      <td align="center" style="color:rgb(0, 204, 255)"><strong> Model Name</strong></td>
+                      <td align="center" style="color: rgb(0, 204, 255)"><strong> Model Score</strong></td>
+                  </tr>
+              </thead>
+              <tbody align="center">
+
+              </tbody>
+          </table>
+
+          <p id="features" align="center"><bold></bold></p>
+
+          <div class="container" id='features1' style="background-color: white;border:2 2 2 2;color:black; align-content: center">
+          </div>
+<!-- 
+          <div class="container" id='data-from-server' style="background-color: white;border:2 2 2 2;color:black">
+            </div> -->
+      </div>
+
+
+
+    <div>
+
+  <!-- <div class="container" id='data-from-server' style="background-color: white;border:2 2 2 2;color:black">
+  </div> -->
+  <hr>
+
+<!-- <footer>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <p class="text-muted ">The information
+presented here was created for educational purposes
+only.
+  </p>
+</footer> -->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

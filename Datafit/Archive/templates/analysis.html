@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DataDash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style type="text/css">
+        .bg-cover {
+              background-image: url('../static/ML.jpg');
+              background-repeat: repeat-x;
+        }
+      </style>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>  
+  </head>
+<body>
+  <div class="jumbotron jumbotron bg-cover text-center" >
+    <div class="overlay"></div>
+    <div class="container">
+    <p class="lead">
+           <!-- REMOVE BUTTON IF NOT NECESSARY ON THIS PAGE>
+      <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+    < END SCRAPER BUTTON -->
+  </p>
+    </p>
+    </div>
+  </div>
+  <div>
+      <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Analysis</a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+                <a class="dropdown-item" href="javascript:get_data_scientist();">Data Scientist</a>
+                <a class="dropdown-item" href="javascript:get_data_analyst();">Data Analyst</a>
+                <a class="dropdown-item" href="javascript:get_data_engineer();">Data Engineer</a>
+                <div class="dropdown-divider"></div>
+                
+
+              </div>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About</a>
+          </li>
+        </ul>
+    </div>
+  
+    <!-- Insert Analysis Plots !IMPORTANT: Use plots.js-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <div id="plot"></div>
+    <div id = "plot2"></div>
+    <div id = "plot3"></div>
+<!-- BELLOW IS DROPDOWN FOR JS "switch">
+  <script src="plots.js"></script>
+
+  <select id="selDataset" onchange="getData(this.value)">
+    <option value="dataset1">Job Description</option>
+    <option value="dataset2">Location</option>
+    <option value="dataset3">Skills</option>
+  </select>
+< END JS DROPDOWN-->
+
+  <!-- Use below if adding other plots to this page>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+  <END COMMENT-->
+    <div>
+        <footer class="footer" style="padding-top: 30px">
+          <span class="bottom">The information presented here was created for educational purposes only.</span>
+        </footer>
+      </div>
+  
+  </body>
+  
+</html>
