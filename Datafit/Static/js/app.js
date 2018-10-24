@@ -76,7 +76,7 @@ submit_element.addEventListener('click',function(){
  	for (key in data){
 			value = data[key];
 			if (key == 'Feature Importance'){
-				document.getElementById("features").innerHTML = "Feature Importance";
+				document.getElementById("features").innerHTML = "Feature Importance(in percentage)";
 				value.forEach((element)=>{
 					value1 = element[1];
 					value2 = parseFloat(element[0].toFixed(2))
