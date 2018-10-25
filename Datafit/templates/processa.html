@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DataFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <style type="text/css">
+      .bg-cover {
+          background-image: url('https://s3.amazonaws.com/rutgersmachinelearning-data/ML.jpg');
+      }
+  </style>
+  </head>
+<body>
+  <div class="jumbotron jumbotron bg-cover text-center" >
+    <div class="overlay"></div>
+    <div class="container"></div>
+  </div>
+  <div>
+      <ul class="nav nav-pills">
+             <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('visualization')}}">Visualization</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" href="{{url_for('projectlc')}}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{url_for('about')}}">The Team</a>
+          </li>
+        </ul>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-3">DataFit Project</h1>
+        <p class="lead">The DataFit team built tool to analyze a user given data set, perform supervised learning and display predictive models. 
+          This utility will be a handy tool in the hands of targeted user personas such as: Analyst, Strategist, Decision Makers, etc.
+          <br>
+          
+          <br />&#128504; We analyzed e-commerce data of Industry-wide apparel orders and its specifications. Our website was built in HTML, Bootstrap 4, utilizing JS, JQuery and AJAX for navigation controls. Descriptive visualizations were built in Tableau.
+          <br />&#128504; We prioritized our modeling design to provide a working prototype of a single use case, that enables upload of custom data and displays an evaluation
+          <br />&#128504; We plan to provide many  more useful statistical models for predictive analysis - the NEXT milestone on our roadmap!
+        
+        
+        </p>
+    <div>
+    <div class="row" style="padding-top: 30px">
+        <div class="col-md-6">
+                <img  src="../static/func.jpg" />
+    <div>
+      <hr>
+
+      <div class="row" style="padding-top: 30px">
+        <div class="col-md-4">
+                <img display: block;" src="../static/prototype.jpg" />
+    <div>
+      <!-- <footer class="footer" style="padding-top: 30px">
+        <span class="bottom">The information presented here was created for educational purposes only © Copyright Datafit-Owners for Bootcamp 2018.</span>
+      </footer> -->
+      <footer class="footer" style="padding-top: 30px">
+        <p>© Copyright owners Datafit for Bootcamp 2018. The information presented here was created for educational purposes only </p>
+      </footer>
+    </div>
+  </body>
+  
+</html>

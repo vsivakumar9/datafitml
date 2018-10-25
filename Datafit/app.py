@@ -204,7 +204,7 @@ def KNN():
         
     knn_metrics = { "K" : k_value,
                     "Train Score" :train_scores,
-                    "Test Sore": test_scores}
+                    "Test Score": test_scores}
 
     print("knn_metrics written")
 

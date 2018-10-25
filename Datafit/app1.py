@@ -33,11 +33,31 @@ filepath = None
 
 # load_model()
 
-@app.route("/",methods=['GET', 'POST'])
+@app.route("/")
 def index():
-    global filepath
-    data = {"success": False}
+    """Return the homepage."""
     return render_template("index.html")
+
+@app.route("/about")
+def about():
+    """Return the homepage."""
+    return render_template("about.html")
+
+@app.route("/visualization")
+def visualization():
+    """Return the homepage."""
+    return render_template("visualization.html")
+
+@app.route("/projectlc")
+def projectlc():
+    """Return the homepage."""
+    return render_template("process.html")
+
+# @app.route("/",methods=['GET', 'POST'])
+# def index():
+#     global filepath
+#     data = {"success": False}
+#     return render_template("index.html")
     # if request.method == 'POST':
     #     if request.files.get('file'):
     #         # read the file
@@ -184,7 +204,7 @@ def KNN():
         
     knn_metrics = { "K" : k_value,
                     "Train Score" :train_scores,
-                    "Test Sore": test_scores}
+                    "Test Score": test_scores}
 
     print("knn_metrics written")
 
