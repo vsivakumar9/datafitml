@@ -1,4 +1,4 @@
-## Project 3: DataFit – Meghana, Priyadarshini, Supriya, Siva
+## Project 3: DataFit – Siva, Meghana, Priyadarshini, Supriya.
 ## Objective: Create a UI utility for machine learning model and predict an outcome. 
 
 * The user can select the dataset of choice (Demo dataset – Cloth.csv : The objective is to predict the cloth size based on inputs such as height, brand, fabric type)
